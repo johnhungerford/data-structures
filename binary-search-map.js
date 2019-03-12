@@ -76,7 +76,7 @@ class BinarySearchNode {
     }
 }
 
-class BinarySearchTree {
+class BinarySearchMap {
     constructor(k, v, cmp) {
         this.map = {};
         if (cmp instanceof Function) {
@@ -147,3 +147,5 @@ class BinarySearchTree {
         return out;
     }
 }
+
+module.exports = BinarySearchMap;
