@@ -47,8 +47,14 @@ class RedBlackNode {
 
     balance() {
         let ptr = this;
-        while (ptr.p !== null) {
-            if (!ptr.red || !ptr.p.red) break;
+        while (ptr !== null) {
+            if (!ptr.red) break;
+            if (ptr.p === null) {
+                ptr.red = false;
+                break;
+            }
+
+            if (!ptr.p.red) break;
 
             if (ptr.p.p === null) {
                 ptr.p.red = false;
@@ -64,7 +70,7 @@ class RedBlackNode {
                 ptr.p.p.red = true;
             }
 
-            ptr = ptr.p;
+            ptr = ptr.p.p;
         }
     }
 
@@ -269,3 +275,5 @@ class RedBlackMap {
         }
     }
 }
+
+module.exports = RedBlackMap;
