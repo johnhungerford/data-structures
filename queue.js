@@ -10,7 +10,7 @@ class Queue {
         this.len = this.out === null ? 0 : 1;
     }
 
-    push(val) {
+    enqueue(val) {
         if (this.out === null) {
             this.out = new Node(val);
             this.in = this.out;
@@ -24,7 +24,7 @@ class Queue {
         this.len += 1;
     }
 
-    pop() {
+    dequeue() {
         if (this.out === null) return undefined;
         const popped = this.out;
         this.out = this.out.n;
@@ -33,7 +33,7 @@ class Queue {
         return popped.v;
     }
 
-    read(ind) { 
+    peek(ind) { 
         if (ind === undefined) return this.out.v; 
         if (ind >= this.len) return null;
         let ptr = this.out;
@@ -41,5 +41,7 @@ class Queue {
         return ptr.v;
     }
 
-    readLast() { return this.in.v; }
+    peekLast() { return this.in.v; }
 }
+
+module.exports = Queue;

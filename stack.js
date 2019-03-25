@@ -28,7 +28,7 @@ class Stack {
         return popped.v;
     }
 
-    read(ind) { 
+    peek(ind) { 
         if (ind === undefined) return this.top.v; 
         if (ind >= this.len) return undefined;
         let ptr = this.top;
@@ -36,3 +36,5 @@ class Stack {
         return ptr.v;
     }
 }
+
+module.exports = Stack;
