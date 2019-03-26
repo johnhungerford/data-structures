@@ -46,7 +46,7 @@ class LinkedList {
     }
 
     read(index) {
-        const ptr = getIndex(index);
+        const ptr = this.getIndex(index);
         if (ptr === null) return undefined;
         return ptr.v;
     }
