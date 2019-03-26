@@ -9,7 +9,7 @@ class HashTable {
         let i;
         for (i = 0; i < key.length; i += 5) {
             for (let j = 0; j < 5 && i + j < key.length; j++) {
-                hashedKey += key.charCodeAt(j) * (64 ^ j);
+                hashedKey += key.charCodeAt(j);
             }
         }
 
