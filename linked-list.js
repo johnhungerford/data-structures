@@ -10,11 +10,7 @@ class LinkedList {
             this.start = new Node(inp[0]);
             this.end = this.start;
             this.length = 1;
-            for (let i = 1; i < inp.length; i++) {
-                this.add(inp[i]);
-                length += 1;
-            }
-
+            for (let i = 1; i < inp.length; i++) this.add(inp[i]);
             return;
         } 
 
@@ -36,7 +32,7 @@ class LinkedList {
         let ptr = null;
         if (ind > this.length / 2) {
             ptr = this.end;
-            for (let i = this.length - 1; i >= ind; i--) ptr = ptr.p;
+            for (let i = this.length - 1; i > ind; i--) ptr = ptr.p;
             return ptr;
         }
 
