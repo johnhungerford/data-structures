@@ -43,7 +43,9 @@ class HashTable {
             const out = bucket.splice(i,1);
             return out[1];
         }
-        
+
         return undefined;
     }
 }
+
+module.exports = HashTable;
